@@ -1,4 +1,4 @@
-#!/ubr/bin/env bash
+#!/usr/bin/env bash
 
 sshd -T | egrep -i 'authorizedkeysfile' | perl -lne '@a = split(/\s+/); shift @a; print /([^\/]+)$/ for (@a);'| while read file; do
         echo "find for $file"
